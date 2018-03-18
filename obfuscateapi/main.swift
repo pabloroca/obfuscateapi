@@ -34,12 +34,15 @@ for (index, element) in arrArguments.enumerated() {
 }
 
 var infile = "apiplain.plist"
-guard let infileFromArgs = argsDict["infile"] else {
-    print("Missing infile or default '\(infile)' does not exist");
+if let infileFromArgs = argsDict["infile"] {
+    infile = infileFromArgs
+}
+
+if !FileManager.default.fileExists(atPath: infile) {
+    print("infile '\(infile)' does not exist");
     usage()
     exit(1)
 }
-infile = infileFromArgs
 
 guard let aesKey = argsDict["key"] else {
     usage()
