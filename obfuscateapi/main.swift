@@ -107,6 +107,61 @@ do {
     fileHandler.write("}\n".data(using: .utf8)!)
     fileHandler.closeFile()
 } catch {
-    print("Error writing to file \(error)")
+    print("Error writing to file \(outfile). Error \(error)")
     exit(2)
 }
+
+// MARK: - Create key class
+
+var keyclass = "AESKeyClass.swift"
+if let keyclassFromArgs = argsDict["keyclass"] {
+    keyclass = keyclassFromArgs
+}
+
+FileManager.default.createFile(atPath: keyclass, contents: nil, attributes: nil)
+
+do {
+    let fileHandler = try FileHandle(forWritingTo: URL(string: keyclass)!)
+    fileHandler.seekToEndOfFile()
+    let header = String(format: "//\n// %@\n//\n\n", keyclass)
+    fileHandler.write(header.data(using: .utf8)!)
+
+    fileHandler.seekToEndOfFile()
+    fileHandler.write("import Foundation\n\n".data(using: .utf8)!)
+
+    fileHandler.seekToEndOfFile()
+    fileHandler.write("/// End Points\n".data(using: .utf8)!)
+
+    fileHandler.seekToEndOfFile()
+    fileHandler.write("struct APIConstants {\n\n".data(using: .utf8)!)
+
+    for endPointComment in inputDict {
+        fileHandler.seekToEndOfFile()
+        let stringEndPointComment = String(format: "    /// %@\n", endPointComment.key as! CVarArg)
+        fileHandler.write(stringEndPointComment.data(using: .utf8)!)
+
+        guard let childDict = endPointComment.value as? [String: String] else {
+            exit(1)
+        }
+
+        // encrypt
+        let stringToEncrypt = String(format: "%@", childDict["value"]!)
+        let encryptedStringBase64 = stringToEncrypt.aesEncryptWithKey(aesKey, iv: hexiv)
+        // encrypt
+
+        //let jar = encryptedStringBase64.aesDecryptWithKey(aesKey, iv: hexiv)
+
+        fileHandler.seekToEndOfFile()
+        let endPoint = String(format: "    static let %@ = \"%@\"\n\n", childDict["key"]!, encryptedStringBase64)
+        fileHandler.write(endPoint.data(using: .utf8)!)
+    }
+
+    fileHandler.seekToEndOfFile()
+    fileHandler.write("}\n".data(using: .utf8)!)
+    fileHandler.closeFile()
+} catch {
+    print("Error writing to file \(outfile). Error \(error)")
+    exit(2)
+}
+
+print("End")
