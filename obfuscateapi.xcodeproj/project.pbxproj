@@ -69,7 +69,7 @@
 		6D2374D3205EB9BE00915635 /* obfuscateapi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = obfuscateapi; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2374D6205EB9BE00915635 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6D2374E4205EBC7700915635 /* Crypto+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crypto+Extensions.swift"; sourceTree = "<group>"; };
-		6DE5017D205EFDB600A9B7FD /* obfuscateapi Testing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "obfuscateapi Testing"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DE5017D205EFDB600A9B7FD /* obfuscateapit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = obfuscateapit; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE5017F205EFE7100A9B7FD /* apiplain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apiplain.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				6D2374D3205EB9BE00915635 /* obfuscateapi */,
-				6DE5017D205EFDB600A9B7FD /* obfuscateapi Testing */,
+				6DE5017D205EFDB600A9B7FD /* obfuscateapit */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,9 +147,9 @@
 			productReference = 6D2374D3205EB9BE00915635 /* obfuscateapi */;
 			productType = "com.apple.product-type.tool";
 		};
-		6DE50172205EFDB600A9B7FD /* obfuscateapi Testing */ = {
+		6DE50172205EFDB600A9B7FD /* obfuscateapit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6DE5017A205EFDB600A9B7FD /* Build configuration list for PBXNativeTarget "obfuscateapi Testing" */;
+			buildConfigurationList = 6DE5017A205EFDB600A9B7FD /* Build configuration list for PBXNativeTarget "obfuscateapit" */;
 			buildPhases = (
 				6DE50175205EFDB600A9B7FD /* Sources */,
 				6DE50178205EFDB600A9B7FD /* Frameworks */,
@@ -160,9 +160,9 @@
 			dependencies = (
 				6DE50173205EFDB600A9B7FD /* PBXTargetDependency */,
 			);
-			name = "obfuscateapi Testing";
+			name = obfuscateapit;
 			productName = obfuscateapi;
-			productReference = 6DE5017D205EFDB600A9B7FD /* obfuscateapi Testing */;
+			productReference = 6DE5017D205EFDB600A9B7FD /* obfuscateapit */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -201,7 +201,7 @@
 			projectRoot = "";
 			targets = (
 				6D2374D2205EB9BE00915635 /* obfuscateapi */,
-				6DE50172205EFDB600A9B7FD /* obfuscateapi Testing */,
+				6DE50172205EFDB600A9B7FD /* obfuscateapit */,
 				6D2374DD205EBA3E00915635 /* CommonCrypto */,
 			);
 		};
@@ -463,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6DE5017A205EFDB600A9B7FD /* Build configuration list for PBXNativeTarget "obfuscateapi Testing" */ = {
+		6DE5017A205EFDB600A9B7FD /* Build configuration list for PBXNativeTarget "obfuscateapit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6DE5017B205EFDB600A9B7FD /* Debug */,
