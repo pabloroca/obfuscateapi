@@ -1,5 +1,7 @@
 # obfuscateapi
 
+[![Swift](https://img.shields.io/badge/swift-4.0-red.svg?style=flat)](https://developer.apple.com/swift)
+
 Mac OSX, Command line Swift 4 Utility for obfuscate / defuscate strings (API endpoints) in AES128 format.
 
 ## Contents
