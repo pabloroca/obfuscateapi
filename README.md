@@ -101,7 +101,41 @@ The following options are available:
 
 **-iv** initialization vector. By default is `00000000000000000000000000000000`
 
-**-infile** plist to convert to classes
+**-infile** plist to convert to classes. bu default is `apiplain.plist`
+
+It will generate two files `APIConstants.swift` with the encrypted strings and `AESKeyClass.swift` with a function to retrieve the key
+
+## infile plist format
+
+We should describe the network services in a plist, this is a sample plist. Each entry has three parts (dictionary with a long name for comments, constant name and value
+
+```<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Base URL</key>
+	<dict>
+		<key>key</key>
+		<string>baseURL</string>
+		<key>value</key>
+		<string>https://pr2studio.com</string>
+	</dict>
+	<key>Device binding</key>
+	<dict>
+		<key>key</key>
+		<string>deviceBinding</string>
+		<key>value</key>
+		<string>/means/getbinding</string>
+	</dict>
+	<key>Send key</key>
+	<dict>
+		<key>key</key>
+		<string>sendKey</string>
+		<key>value</key>
+		<string>/means/sendkey</string>
+	</dict>
+</dict>
+</plist>```
 
 ## Credits
 
