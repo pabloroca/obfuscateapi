@@ -85,5 +85,10 @@ Go to xcarchive, show contents and locate  ```/usr/local/bin/obfuscateapi``` and
 
 Open a command line in Terminal and run the command ```obfuscateapi```
 
+```**NAME** obfuscateapi - obfuscates a plist to classes in AES128 format
+
+**SYNOPSIS**
+    **obfuscateapi** **-key** aeskey [**-iv** <YYY>] [**-infile** <file>]```
+
 ## Credits
 ## License
