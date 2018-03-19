@@ -6,7 +6,7 @@ Mac OSX, Command line Swift 4 Utility for obfuscate / defuscate strings (API end
 
 The list of endpoints or servers that an iOS app have, is restricted information that should not be disclosed, usually developers create that network services definition in a constants file or even worse, in a plist.
 
-A plist is easily breakable and plain text strings are also (see strings command), so anyone with a minimum of knowledge can get to know how is our network services definition, who leads it prone to attacks.
+A plist is easily breakable and plain text strings are also (see strings command), so anyone with a minimum of knowledge can get to know how is our network services definition, who leaves it prone to attacks.
 
 So doing like this, is a bad security practice:
 
@@ -14,7 +14,6 @@ So doing like this, is a bad security practice:
 struct APIConstants {
     static let baseURL = "https://server.com"
     static let deviceBinding = "api/devideBinding"
-...
 ```
 
 This command line utility creates two Swift 4 compatible files:
@@ -25,7 +24,6 @@ This command line utility creates two Swift 4 compatible files:
 struct APIConstants {
     static let baseURL = "Cs6WqbJ4uVMXUhQ/pU96WF/wsWAT5yiBqfGVG99XZ0M="
     static let deviceBinding = "Ja2p49mofIichhwVjkgQlIKQC/RDNBZe4PtZUCMaYCY="
-...
 ```
 
 - An inline method in file ```AESKeyClass.swift``` where password is scrambled. See it for password: secretpassword
@@ -42,11 +40,13 @@ import Foundation
 ```
 ## Technology
 
-* It uses AES128 CBC format, with an optional ```iv```, if you don´t specify, the default ```iv``` will be ```00000000000000000000000000000000```
+* It uses [AES128 CBC](https://tools.ietf.org/html/rfc3602) format, with an optional ```iv```, if you don´t specify, the default ```iv``` will be ```00000000000000000000000000000000```
 
 * Symmetric encryption
 
 * inline function for the aes key. So it will be more difficult to hijack it, and the attacker would need to patch all occurrences of it.
+
+* the inlined bytes are generated pseudo-ramdomly, so every time you run it, it will generate different hexs with operations
 
 * we can deploy a new version of the app with a new AES key. Just running again this command utility.
 
@@ -70,5 +70,6 @@ From your achived project, you will have an ```obfuscateapi date.xcarchive``` fi
 
 Go to xcarchive, show contents and locate  ```/usr/local/bin/obfuscateapi``` and copy it to your ```/usr/local/bin folder```
 
+## Running it
 
-
+Open a command line in Terminal and run the command ```obfuscateapi```
