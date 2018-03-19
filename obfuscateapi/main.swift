@@ -72,37 +72,37 @@ do {
     fileHandler.seekToEndOfFile()
     let header = String(format: "//\n// %@\n//\n\n", outfile)
     fileHandler.write(header.data(using: .utf8)!)
-
+    
     fileHandler.seekToEndOfFile()
     fileHandler.write("import Foundation\n\n".data(using: .utf8)!)
-
+    
     fileHandler.seekToEndOfFile()
     fileHandler.write("/// End Points\n".data(using: .utf8)!)
-
+    
     fileHandler.seekToEndOfFile()
     fileHandler.write("struct APIConstants {\n\n".data(using: .utf8)!)
-
+    
     for endPointComment in inputDict {
         fileHandler.seekToEndOfFile()
         let stringEndPointComment = String(format: "    /// %@\n", endPointComment.key as! CVarArg)
         fileHandler.write(stringEndPointComment.data(using: .utf8)!)
-
+        
         guard let childDict = endPointComment.value as? [String: String] else {
             exit(1)
         }
-
+        
         // encrypt
         let stringToEncrypt = String(format: "%@", childDict["value"]!)
         let encryptedStringBase64 = stringToEncrypt.aesEncryptWithKey(aesKey, iv: hexiv)
         // encrypt
-
+        
         //let jar = encryptedStringBase64.aesDecryptWithKey(aesKey, iv: hexiv)
-
+        
         fileHandler.seekToEndOfFile()
         let endPoint = String(format: "    static let %@ = \"%@\"\n\n", childDict["key"]!, encryptedStringBase64)
         fileHandler.write(endPoint.data(using: .utf8)!)
     }
-
+    
     fileHandler.seekToEndOfFile()
     fileHandler.write("}\n".data(using: .utf8)!)
     fileHandler.closeFile()
@@ -111,13 +111,12 @@ do {
     exit(2)
 }
 
-// MARK: - Create key class
+// MARK: - Create aeskey class
 
 var keyclass = "AESKeyClass.swift"
 if let keyclassFromArgs = argsDict["keyclass"] {
     keyclass = keyclassFromArgs
 }
-
 FileManager.default.createFile(atPath: keyclass, contents: nil, attributes: nil)
 
 do {
@@ -125,37 +124,54 @@ do {
     fileHandler.seekToEndOfFile()
     let header = String(format: "//\n// %@\n//\n\n", keyclass)
     fileHandler.write(header.data(using: .utf8)!)
-
+    
     fileHandler.seekToEndOfFile()
     fileHandler.write("import Foundation\n\n".data(using: .utf8)!)
-
+    
     fileHandler.seekToEndOfFile()
-    fileHandler.write("/// End Points\n".data(using: .utf8)!)
-
+    fileHandler.write("@inline(__always) public func aesKey() -> [UInt8] {\n".data(using: .utf8)!)
+    
     fileHandler.seekToEndOfFile()
-    fileHandler.write("struct APIConstants {\n\n".data(using: .utf8)!)
+    fileHandler.write("    return [\n".data(using: .utf8)!)
+    
+    let aesKeyData: Data = aesKey.data(using: .utf8)!
+    
+    fileHandler.seekToEndOfFile()
+    fileHandler.write("        ".data(using: .utf8)!)
+    
+    for (index,character) in aesKeyData.enumerated() {
 
-    for endPointComment in inputDict {
-        fileHandler.seekToEndOfFile()
-        let stringEndPointComment = String(format: "    /// %@\n", endPointComment.key as! CVarArg)
-        fileHandler.write(stringEndPointComment.data(using: .utf8)!)
+        let firstNumber = UInt8(arc4random_uniform(UInt32(character)))
 
-        guard let childDict = endPointComment.value as? [String: String] else {
-            exit(1)
+        switch arc4random_uniform(2) {
+        // adds
+        case 0:
+            fileHandler.seekToEndOfFile()
+            fileHandler.write(String(format: "0x%02X",firstNumber).data(using: .utf8)!)
+            let secondNumber = character - firstNumber
+            fileHandler.seekToEndOfFile()
+            fileHandler.write(String(format: "+0x%02X",secondNumber).data(using: .utf8)!)
+        // substracts
+        default:
+            fileHandler.seekToEndOfFile()
+            fileHandler.write(String(format: "0x%02X",character + firstNumber).data(using: .utf8)!)
+            fileHandler.seekToEndOfFile()
+            fileHandler.write(String(format: "-0x%02X",firstNumber).data(using: .utf8)!)
+            break
         }
-
-        // encrypt
-        let stringToEncrypt = String(format: "%@", childDict["value"]!)
-        let encryptedStringBase64 = stringToEncrypt.aesEncryptWithKey(aesKey, iv: hexiv)
-        // encrypt
-
-        //let jar = encryptedStringBase64.aesDecryptWithKey(aesKey, iv: hexiv)
-
-        fileHandler.seekToEndOfFile()
-        let endPoint = String(format: "    static let %@ = \"%@\"\n\n", childDict["key"]!, encryptedStringBase64)
-        fileHandler.write(endPoint.data(using: .utf8)!)
+        
+        if index < aesKeyData.count - 1 {
+            fileHandler.seekToEndOfFile()
+            fileHandler.write(", ".data(using: .utf8)!)
+        }
+        if remainder(Double(index), 9) == 0 && index != 0 {
+            fileHandler.seekToEndOfFile()
+            fileHandler.write("\n        ".data(using: .utf8)!)
+        }
     }
-
+    
+    fileHandler.seekToEndOfFile()
+    fileHandler.write("\n    ]\n".data(using: .utf8)!)
     fileHandler.seekToEndOfFile()
     fileHandler.write("}\n".data(using: .utf8)!)
     fileHandler.closeFile()
@@ -163,5 +179,7 @@ do {
     print("Error writing to file \(outfile). Error \(error)")
     exit(2)
 }
+
+//let arrKeyString = String(data: Data(bytes: aesKey()), encoding: .utf8)
 
 print("End")

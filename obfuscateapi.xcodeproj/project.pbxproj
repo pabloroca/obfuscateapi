@@ -23,7 +23,6 @@
 /* Begin PBXBuildFile section */
 		6D2374D7205EB9BE00915635 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374D6205EB9BE00915635 /* main.swift */; };
 		6D2374E5205EBC7700915635 /* Crypto+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374E4205EBC7700915635 /* Crypto+Extensions.swift */; };
-		6D434411205F0B1B005607AB /* AESKeyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D434410205F0B1B005607AB /* AESKeyClass.swift */; };
 		6DE50176205EFDB600A9B7FD /* Crypto+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374E4205EBC7700915635 /* Crypto+Extensions.swift */; };
 		6DE50177205EFDB600A9B7FD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374D6205EB9BE00915635 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -70,7 +69,6 @@
 		6D2374D3205EB9BE00915635 /* obfuscateapi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = obfuscateapi; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2374D6205EB9BE00915635 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6D2374E4205EBC7700915635 /* Crypto+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crypto+Extensions.swift"; sourceTree = "<group>"; };
-		6D434410205F0B1B005607AB /* AESKeyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESKeyClass.swift; sourceTree = "<group>"; };
 		6DE5017D205EFDB600A9B7FD /* obfuscateapit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = obfuscateapit; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE5017F205EFE7100A9B7FD /* apiplain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apiplain.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				6DE5017F205EFE7100A9B7FD /* apiplain.plist */,
-				6D434410205F0B1B005607AB /* AESKeyClass.swift */,
 			);
 			path = TestingData;
 			sourceTree = "<group>";
@@ -242,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE50176205EFDB600A9B7FD /* Crypto+Extensions.swift in Sources */,
-				6D434411205F0B1B005607AB /* AESKeyClass.swift in Sources */,
 				6DE50177205EFDB600A9B7FD /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
