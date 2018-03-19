@@ -54,19 +54,19 @@ import Foundation
 
 ## Install
 
-### Install Command Line Developer tools.
+### 1 Install Command Line Developer tools.
 
 The easiest way is with: ```xcode-select --install```
 
-### Adjust the ouput files to your needs
+### 2 Adjust the ouput files to your needs
 
 This can be done changing how they will render, it´s done in ```main.swift```
 
-### Archive the project
+### 3 Archive the project
 
 From your achived project, you will have an ```obfuscateapi date.xcarchive``` file
 
-### Copy executable to your usrArchive the project
+### 4 Copy executable to your usrArchive the project
 
 Go to xcarchive, show contents and locate  ```/usr/local/bin/obfuscateapi``` and copy it to your ```/usr/local/bin folder```
 
