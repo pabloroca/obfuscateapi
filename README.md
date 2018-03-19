@@ -98,7 +98,9 @@ obfuscateapi - obfuscates a plist to classes in AES128 format
 The following options are available:
 
 **-key** the key for encrypting. Better to use a long one
+
 **-iv** initialization vector. By default is `00000000000000000000000000000000`
+
 **-infile** plist to convert to classes
 
 ## Credits
