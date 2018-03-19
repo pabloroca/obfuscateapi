@@ -107,7 +107,7 @@ It will generate two files `APIConstants.swift` with the encrypted strings and `
 
 ## infile plist format
 
-We should describe the network services in a plist, this is a sample plist. Each entry has three parts (dictionary with a long name for comments, constant name and value
+We should describe the network services in a plist, this is a sample plist. Each entry has three parts (dictionary with a long name for comments, constant name and value. Sample with three constants
 
 	<key>Base URL</key>
 	<dict>
