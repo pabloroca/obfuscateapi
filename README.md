@@ -53,6 +53,8 @@ import Foundation
 
 * Symmetric encryption
 
+* Uses standards. Done with Apple CommonCrypto and standard format. No third parties or propietary formats.
+
 * inline function for the aes key. So it will be more difficult to hijack it, and the attacker would need to patch all occurrences of it.
 
 * the inlined bytes are generated pseudo-ramdomly, so every time you run it, it will generate different hexs with operations
