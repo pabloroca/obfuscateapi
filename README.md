@@ -133,7 +133,17 @@ We should describe the network services in a plist, this is a sample plist. Each
 
 ## Using it
 
-After generated the two files, you can copy it yo your project, along with [Crypto+Extensions.swift](https://github.com/pabloroca/obfuscateapi/blob/master/obfuscateapi/Crypto%2BExtensions.swift)
+After generated the two files (`APIConstants.swift` and `AESKeyClass.swift`), you can copy it yo your project, along with [Crypto+Extensions.swift](https://github.com/pabloroca/obfuscateapi/blob/master/obfuscateapi/Crypto%2BExtensions.swift)
+
+Then when you want to retrieve the string for an endpoint, you should do this:
+
+```
+let arrKeyString = String(data: Data(bytes: aesKey()), encoding: .utf8)
+let endpoint = APIConstants.deviceBinding.aesDecryptWithKey(arrKeyString)
+```
+
+then use endpoint constant for doing yout network request
+
 
 ## Credits
 
