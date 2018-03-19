@@ -91,7 +91,7 @@ obfuscateapi - obfuscates a plist to classes in AES128 format
 
 **SYNOPSIS**
 
-    **obfuscateapi** **-key** aeskey [**-iv** ivstring] [**-infile** file]
+   **obfuscateapi** **-key** aeskey [**-iv** ivstring] [**-infile** file]
 
 ## Credits
 ## License
