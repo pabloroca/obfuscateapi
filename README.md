@@ -8,6 +8,7 @@ Mac OSX, Command line Swift 4 Utility for obfuscate / defuscate strings (API end
 - [Tecnology](#technology)
 - [Install](#install)
 - [Running it](#running-it)
+- [Using it](#using-it)
 - [Credits](#credits)
 - [License](#license)
 
@@ -144,6 +145,9 @@ let endpoint = APIConstants.deviceBinding.aesDecryptWithKey(arrKeyString)
 
 then use endpoint constant for doing yout network request
 
+You can check if the strings generated work fine with this openssl command (first save the string ending with a carriage return in file test.enc):
+
+openssl enc -aes128 -k secretpassword -p -iv 00000000000000000000000000000000 -nosalt -base64 -d -in test.enc
 
 ## Credits
 
