@@ -9,7 +9,8 @@
 import Foundation
 
 func usage() {
-    print("Usage: obfuscateapi -key <XXX> -iv <XXX> -infile <file> \n");
+    print("obfuscateapi v1.0 @PR2Studio 2018");
+    print("Usage: obfuscateapi -key aeskey [-iv ivstring] [-infile file] \n");
 }
 
 // MARK: - Argument management
@@ -182,4 +183,4 @@ do {
 
 //let arrKeyString = String(data: Data(bytes: aesKey()), encoding: .utf8)
 
-print("End")
+print("Generated files APIConstants.swift and AESKeyClass.swift")

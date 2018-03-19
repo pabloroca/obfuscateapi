@@ -23,19 +23,10 @@
 /* Begin PBXBuildFile section */
 		6D2374D7205EB9BE00915635 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374D6205EB9BE00915635 /* main.swift */; };
 		6D2374E5205EBC7700915635 /* Crypto+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374E4205EBC7700915635 /* Crypto+Extensions.swift */; };
-		6DE50176205EFDB600A9B7FD /* Crypto+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374E4205EBC7700915635 /* Crypto+Extensions.swift */; };
-		6DE50177205EFDB600A9B7FD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374D6205EB9BE00915635 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		6D2374E2205EBA6200915635 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D2374CB205EB9BE00915635 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D2374DD205EBA3E00915635;
-			remoteInfo = CommonCrypto;
-		};
-		6DE50174205EFDB600A9B7FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6D2374CB205EB9BE00915635 /* Project object */;
 			proxyType = 1;
@@ -54,34 +45,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		6DE50179205EFDB600A9B7FD /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6D2374D3205EB9BE00915635 /* obfuscateapi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = obfuscateapi; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2374D6205EB9BE00915635 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6D2374E4205EBC7700915635 /* Crypto+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Crypto+Extensions.swift"; sourceTree = "<group>"; };
-		6DE5017D205EFDB600A9B7FD /* obfuscateapit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = obfuscateapit; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D9F944820604C3100CA79BF /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		6D9F944920604C3100CA79BF /* AESKeyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESKeyClass.swift; sourceTree = "<group>"; };
 		6DE5017F205EFE7100A9B7FD /* apiplain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apiplain.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6D2374D0205EB9BE00915635 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6DE50178205EFDB600A9B7FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -104,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				6D2374D3205EB9BE00915635 /* obfuscateapi */,
-				6DE5017D205EFDB600A9B7FD /* obfuscateapit */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +96,8 @@
 		6DE5017E205EFE7100A9B7FD /* TestingData */ = {
 			isa = PBXGroup;
 			children = (
+				6D9F944920604C3100CA79BF /* AESKeyClass.swift */,
+				6D9F944820604C3100CA79BF /* APIConstants.swift */,
 				6DE5017F205EFE7100A9B7FD /* apiplain.plist */,
 			);
 			path = TestingData;
@@ -147,24 +124,6 @@
 			productReference = 6D2374D3205EB9BE00915635 /* obfuscateapi */;
 			productType = "com.apple.product-type.tool";
 		};
-		6DE50172205EFDB600A9B7FD /* obfuscateapit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6DE5017A205EFDB600A9B7FD /* Build configuration list for PBXNativeTarget "obfuscateapit" */;
-			buildPhases = (
-				6DE50175205EFDB600A9B7FD /* Sources */,
-				6DE50178205EFDB600A9B7FD /* Frameworks */,
-				6DE50179205EFDB600A9B7FD /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6DE50173205EFDB600A9B7FD /* PBXTargetDependency */,
-			);
-			name = obfuscateapit;
-			productName = obfuscateapi;
-			productReference = 6DE5017D205EFDB600A9B7FD /* obfuscateapit */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -183,9 +142,6 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
-					6DE50172205EFDB600A9B7FD = {
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 6D2374CE205EB9BE00915635 /* Build configuration list for PBXProject "obfuscateapi" */;
@@ -201,7 +157,6 @@
 			projectRoot = "";
 			targets = (
 				6D2374D2205EB9BE00915635 /* obfuscateapi */,
-				6DE50172205EFDB600A9B7FD /* obfuscateapit */,
 				6D2374DD205EBA3E00915635 /* CommonCrypto */,
 			);
 		};
@@ -234,15 +189,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6DE50175205EFDB600A9B7FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6DE50176205EFDB600A9B7FD /* Crypto+Extensions.swift in Sources */,
-				6DE50177205EFDB600A9B7FD /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -250,11 +196,6 @@
 			isa = PBXTargetDependency;
 			target = 6D2374DD205EBA3E00915635 /* CommonCrypto */;
 			targetProxy = 6D2374E2205EBA6200915635 /* PBXContainerItemProxy */;
-		};
-		6DE50173205EFDB600A9B7FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D2374DD205EBA3E00915635 /* CommonCrypto */;
-			targetProxy = 6DE50174205EFDB600A9B7FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -409,30 +350,6 @@
 			};
 			name = Release;
 		};
-		6DE5017B205EFDB600A9B7FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5KCE3C36M8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		6DE5017C205EFDB600A9B7FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5KCE3C36M8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -459,15 +376,6 @@
 			buildConfigurations = (
 				6D2374DF205EBA3E00915635 /* Debug */,
 				6D2374E0205EBA3E00915635 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6DE5017A205EFDB600A9B7FD /* Build configuration list for PBXNativeTarget "obfuscateapit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6DE5017B205EFDB600A9B7FD /* Debug */,
-				6DE5017C205EFDB600A9B7FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
