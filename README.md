@@ -2,6 +2,15 @@
 
 Mac OSX, Command line Swift 4 Utility for obfuscate / defuscate strings (API endpoints) in AES128 format.
 
+## Contents
+
+- [Motivation](#motivation)
+- [Tecnology](#technology)
+- [Install](#install)
+- [Running it](#running-it)
+- [Credits](#credits)
+- [License](#license)
+
 ## Motivation
 
 The list of endpoints or servers that an iOS app have, is restricted information that should not be disclosed, usually developers create that network services definition in a constants file or even worse, in a plist.
@@ -73,3 +82,6 @@ Go to xcarchive, show contents and locate  ```/usr/local/bin/obfuscateapi``` and
 ## Running it
 
 Open a command line in Terminal and run the command ```obfuscateapi```
+
+## Credit
+## License
