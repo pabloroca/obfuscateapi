@@ -109,10 +109,6 @@ It will generate two files `APIConstants.swift` with the encrypted strings and `
 
 We should describe the network services in a plist, this is a sample plist. Each entry has three parts (dictionary with a long name for comments, constant name and value
 
-```<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
 	<key>Base URL</key>
 	<dict>
 		<key>key</key>
@@ -134,8 +130,7 @@ We should describe the network services in a plist, this is a sample plist. Each
 		<key>value</key>
 		<string>/means/sendkey</string>
 	</dict>
-</dict>
-</plist>```
+
 
 ## Credits
 
