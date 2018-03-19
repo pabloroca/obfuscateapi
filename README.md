@@ -27,7 +27,7 @@ struct APIConstants {
 
 This command line utility creates two Swift 4 compatible files:
 
-- An ```APIConstants.swift``` file. With strings from network layer encrypted by AES128 CBC format. See how it looks now:
+- An ```APIConstants.swift``` file. With strings from network layer encrypted in AES128 CBC format. See how it looks now:
 
 ```swift
 struct APIConstants {
@@ -131,6 +131,9 @@ We should describe the network services in a plist, this is a sample plist. Each
 		<string>/means/sendkey</string>
 	</dict>
 
+## Using it
+
+After generated the two files, you can copy it yo your project, along with [Crypto+Extensions.swift](https://github.com/pabloroca/obfuscateapi/blob/master/obfuscateapi/Crypto%2BExtensions.swift)
 
 ## Credits
 
