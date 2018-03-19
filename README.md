@@ -1,5 +1,7 @@
 # obfuscateapi
 
+[![Swift](https://img.shields.io/badge/swift-4.0-red.svg?style=flat)](https://developer.apple.com/swift)
+
 Mac OSX, Command line Swift 4 Utility for obfuscate / defuscate strings (API endpoints) in AES128 format.
 
 ## Contents
@@ -134,7 +136,7 @@ We should describe the network services in a plist, this is a sample plist. Each
 
 ## Using it
 
-After generated the two files (`APIConstants.swift` and `AESKeyClass.swift`), you can copy it yo your project, along with [Crypto+Extensions.swift](https://github.com/pabloroca/obfuscateapi/blob/master/obfuscateapi/Crypto%2BExtensions.swift)
+After generated the two files (`APIConstants.swift` and `AESKeyClass.swift`), you can copy it to your project, along with [Crypto+Extensions.swift](https://github.com/pabloroca/obfuscateapi/blob/master/obfuscateapi/Crypto%2BExtensions.swift)
 
 Then when you want to retrieve the string for an endpoint, you should do this:
 
