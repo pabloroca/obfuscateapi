@@ -66,7 +66,7 @@ This can be done changing how they will render, it´s done in ```main.swift```
 
 From your achived project, you will have an ```obfuscateapi date.xcarchive``` file
 
-### 4 Copy executable to your usrArchive the project
+### 4 Copy executable to your usr/local/bin folder
 
 Go to xcarchive, show contents and locate  ```/usr/local/bin/obfuscateapi``` and copy it to your ```/usr/local/bin folder```
 
