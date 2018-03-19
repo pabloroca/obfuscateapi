@@ -93,10 +93,18 @@ obfuscateapi - obfuscates a plist to classes in AES128 format
 
    **obfuscateapi** **-key** aeskey [**-iv** ivstring] [**-infile** file]
 
+**DESCRIPTION**
+
+The following options are available:
+
+**-key** the key for encrypting. Better to use a long one
+**-iv** initialization vector. By default is `00000000000000000000000000000000`
+**-infile** plist to convert to classes
+
 ## Credits
 
 Pablo Roca Rozas. PR2Studio.
 
 ## License
 
-obfuscateapi is released under the MIT license. [See LICENSE](https://github.com/pabloroca/obfuscateapi/blob/master/LICENSE) for details.
+**obfuscateapi** is released under the MIT license. [See LICENSE](https://github.com/pabloroca/obfuscateapi/blob/master/LICENSE) for details.
