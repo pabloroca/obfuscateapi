@@ -94,4 +94,9 @@ obfuscateapi - obfuscates a plist to classes in AES128 format
    **obfuscateapi** **-key** aeskey [**-iv** ivstring] [**-infile** file]
 
 ## Credits
+
+Pablo Roca Rozas. PR2Studio.
+
 ## License
+
+obfuscateapi is released under the MIT license. [See LICENSE](https://github.com/pabloroca/obfuscateapi/blob/master/LICENSE) for details.
