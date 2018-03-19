@@ -4,13 +4,13 @@ Mac OSX, Command line Swift 4 Utility for obfuscate / defuscate strings (API end
 
 ## Motivation
 
-The list of endpoints or servers that an iOS app have, is restricted information that should not be disclosed, usually devs we create that network services definition in a constants file or even worse, in a plist.
+The list of endpoints or servers that an iOS app have, is restricted information that should not be disclosed, usually developers create that network services definition in a constants file or even worse, in a plist.
 
 A plist is easily breakable and plain text strings are also (see strings command), so anyone with a minimum of knowledge can get to know how is our network services definition, who leads it prone to attacks.
 
 So doing like this, is a bad security practice:
 
-```
+```swift
 struct APIConstants {
     static let baseURL = "https://server.com"
     static let deviceBinding = "api/devideBinding"
@@ -21,7 +21,7 @@ This command line utility creates two Swift 4 compatible files:
 
 - An ```APIConstants.swift``` file. With strings from network layer encrypted by AES128 CBC format. See how it looks now:
 
-```
+```swift
 struct APIConstants {
     static let baseURL = "Cs6WqbJ4uVMXUhQ/pU96WF/wsWAT5yiBqfGVG99XZ0M="
     static let deviceBinding = "Ja2p49mofIichhwVjkgQlIKQC/RDNBZe4PtZUCMaYCY="
@@ -30,7 +30,7 @@ struct APIConstants {
 
 - An inline method in file ```AESKeyClass.swift``` where password is scrambled. See it for password: secretpassword
 
-```
+```swift
 import Foundation
 @inline(__always) public func aesKey() -> [UInt8] {
     return [
@@ -40,4 +40,35 @@ import Foundation
     ]
 }
 ```
+## Technology
+
+* It uses AES128 CBC format, with an optional ```iv```, if you don´t specify, the default ```iv``` will be ```00000000000000000000000000000000```
+
+* Symmetric encryption
+
+* inline function for the aes key. So it will be more difficult to hijack it, and the attacker would need to patch all occurrences of it.
+
+* we can deploy a new version of the app with a new AES key. Just running again this command utility.
+
+* Secure enough
+
+## Install
+
+### Install Command Line Developer tools.
+
+The easiest way is with: ```xcode-select --install```
+
+### Adjust the ouput files to your needs
+
+This can be done changing how they will render, it´s done in ```main.swift```
+
+### Archive the project
+
+From your achived project, you will have an ```obfuscateapi date.xcarchive``` file
+
+### Copy executable to your usrArchive the project
+
+Go to xcarchive, show contents and locate  ```/usr/local/bin/obfuscateapi``` and copy it to your ```/usr/local/bin folder```
+
+
 
