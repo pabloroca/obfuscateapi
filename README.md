@@ -11,6 +11,7 @@ Mac OSX, Command line Swift 4 Utility for obfuscate (mostly API endpoints) in AE
 - [Install](#install)
 - [Running it](#running-it)
 - [Using it](#using-it)
+- [Some Recommendations](#some-recommendations)
 - [Credits](#credits)
 - [License](#license)
 
