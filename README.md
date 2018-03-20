@@ -2,7 +2,7 @@
 
 [![Swift](https://img.shields.io/badge/swift-4.0-red.svg?style=flat)](https://developer.apple.com/swift)
 
-Mac OSX, Command line Swift 4 Utility for obfuscate / defuscate strings (API endpoints) in AES128 format.
+Mac OSX, Command line Swift 4 Utility for obfuscate (mostly API endpoints) in AES128 format.
 
 ## Contents
 
@@ -52,7 +52,7 @@ import Foundation
 ```
 ## Technology
 
-* It uses [AES128 CBC](https://tools.ietf.org/html/rfc3602) format, with an optional ```iv```, if you don´t specify, the default ```iv``` will be ```00000000000000000000000000000000```
+* It uses [AES128 CBC](https://tools.ietf.org/html/rfc3602) format, with an optional ```iv```, if you don´t specify it, the default ```iv``` will be ```00000000000000000000000000000000```
 
 * Symmetric encryption
 
@@ -74,7 +74,7 @@ The easiest way is with: ```xcode-select --install```
 
 #### 2 Adjust the ouput files to your needs
 
-This can be done changing how they will render, it´s done in ```main.swift```
+If you want to edit the output files format, this can be done changing how they will be created in ```main.swift```
 
 #### 3 Archive the project
 
@@ -82,7 +82,7 @@ From your achived project, you will have an ```obfuscateapi date.xcarchive``` fi
 
 #### 4 Copy executable to your usr/local/bin folder
 
-Go to xcarchive, show contents and locate  ```/usr/local/bin/obfuscateapi``` and copy it to your ```/usr/local/bin folder```
+Go to xcarchive, show contents and locate  ```Products/usr/local/bin/obfuscateapi``` and copy it to your ```/usr/local/bin``` folder
 
 ## Running it
 
@@ -110,7 +110,7 @@ It will generate two files `APIConstants.swift` with the encrypted strings and `
 
 ## infile plist format
 
-We should describe the network services in a plist, this is a sample plist. Each entry has three parts (dictionary with a long name for comments, constant name and value. Sample with three constants
+We should describe the network services in a plist, this is a sample plist. Each entry has three parts (dictionary with a long name for comments, constant name and value. Sample with three constants:
 
 	<key>Base URL</key>
 	<dict>
@@ -150,6 +150,12 @@ then use endpoint constant for doing yout network request
 You can check if the strings generated work fine with this openssl command (first save the string ending with a carriage return in file test.enc):
 
 `openssl enc -aes128 -k secretpassword -p -iv 00000000000000000000000000000000 -nosalt -base64 -d -in test.enc`
+
+## Some recommendations
+
+* This is just one small step for App security, you should enforce more measures like jailbreak detection and SSL Pining among others.
+* You will never be safe, whatever you do, but is better to do something than nothing
+* Security is a feeling, users needs to feel secure enough
 
 ## Credits
 
