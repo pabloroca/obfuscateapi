@@ -56,7 +56,7 @@ extension Data {
     /// Note: You will need to import CommonCrypto
     public func aes(keyData: Data, ivData: Data, operation: Int) -> Data {
         let cryptLength = size_t(self.count + kCCBlockSizeAES128)
-        var cryptData = Data(count:cryptLength)
+        var cryptData = Data(count: cryptLength)
         let keyLength = size_t(kCCKeySizeAES128)
 
         var numBytesProcessed: size_t = 0
@@ -82,9 +82,9 @@ extension Data {
         } else {
             fatalError("Error: \(cryptStatus)")
         }
-        return cryptData;
+        return cryptData
     }
-    
+
 }
 
 extension String {
