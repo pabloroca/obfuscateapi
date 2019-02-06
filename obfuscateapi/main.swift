@@ -28,7 +28,7 @@
 import Foundation
 
 func usage() {
-    print("obfuscateapi v1.0 @PR2Studio 2018");
+    print("obfuscateapi v1.01 @PR2Studio 2019");
     print("Usage: obfuscateapi -key aeskey [-iv ivstring] [-infile file] \n");
 }
 
@@ -100,23 +100,22 @@ do {
     fileHandler.write("/// End Points\n".data(using: .utf8)!)
     
     fileHandler.seekToEndOfFile()
-    fileHandler.write("struct APIConstants {\n\n".data(using: .utf8)!)
+    fileHandler.write("public struct APIConstants {\n\n".data(using: .utf8)!)
     
     for endPointComment in inputDict {
-        fileHandler.seekToEndOfFile()
-        let stringEndPointComment = String(format: "    /// %@\n", endPointComment.key as! CVarArg)
-        fileHandler.write(stringEndPointComment.data(using: .utf8)!)
-        
         guard let childDict = endPointComment.value as? [String: String] else {
             exit(1)
         }
-        
+
+        fileHandler.seekToEndOfFile()
+
+        let stringEndPointComment = String(format: "    /// %@ (%@)\n", endPointComment.key as! CVarArg, childDict["value"]!)
+        fileHandler.write(stringEndPointComment.data(using: .utf8)!)
+
         // encrypt
         let stringToEncrypt = String(format: "%@", childDict["value"]!)
         let encryptedStringBase64 = stringToEncrypt.aesEncryptWithKey(aesKey, iv: hexiv)
         // encrypt
-        
-        //let jar = encryptedStringBase64.aesDecryptWithKey(aesKey, iv: hexiv)
         
         fileHandler.seekToEndOfFile()
         let endPoint = String(format: "    static let %@ = \"%@\"\n\n", childDict["key"]!, encryptedStringBase64)
@@ -148,6 +147,10 @@ do {
     fileHandler.seekToEndOfFile()
     fileHandler.write("import Foundation\n\n".data(using: .utf8)!)
     
+    fileHandler.seekToEndOfFile()
+    let key = String(format: "// using key (%@)\n", aesKey)
+    fileHandler.write(key.data(using: .utf8)!)
+
     fileHandler.seekToEndOfFile()
     fileHandler.write("@inline(__always) public func aesKey() -> [UInt8] {\n".data(using: .utf8)!)
     

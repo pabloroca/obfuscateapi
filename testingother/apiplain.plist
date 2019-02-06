@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Base URL</key>
+	<dict>
+		<key>key</key>
+		<string>baseURL</string>
+		<key>value</key>
+		<string>https://pr2studio.com</string>
+	</dict>
+	<key>Device binding</key>
+	<dict>
+		<key>key</key>
+		<string>deviceBinding</string>
+		<key>value</key>
+		<string>/means/getbinding</string>
+	</dict>
+	<key>Send key</key>
+	<dict>
+		<key>key</key>
+		<string>sendKey</string>
+		<key>value</key>
+		<string>/means/sendkey</string>
+	</dict>
+</dict>
+</plist>

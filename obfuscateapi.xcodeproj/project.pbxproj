@@ -26,16 +26,6 @@
 		6D2374E5205EBC7700915635 /* Crypto+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2374E4205EBC7700915635 /* Crypto+Extensions.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6D2374E2205EBA6200915635 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D2374CB205EB9BE00915635 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D2374DD205EBA3E00915635;
-			remoteInfo = CommonCrypto;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		6D2374D1205EB9BE00915635 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -118,7 +108,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6D2374E3205EBA6200915635 /* PBXTargetDependency */,
 			);
 			name = obfuscateapi;
 			productName = obfuscateapi;
@@ -210,14 +199,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6D2374E3205EBA6200915635 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D2374DD205EBA3E00915635 /* CommonCrypto */;
-			targetProxy = 6D2374E2205EBA6200915635 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6D2374D8205EB9BE00915635 /* Debug */ = {
