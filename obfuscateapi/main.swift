@@ -28,7 +28,7 @@
 import Foundation
 
 func usage() {
-    print("obfuscateapi v1.01 @PR2Studio 2019");
+    print("obfuscateapi v1.02 @PR2Studio 2019");
     print("Usage: obfuscateapi -key aeskey [-iv ivstring] [-infile file] \n");
 }
 

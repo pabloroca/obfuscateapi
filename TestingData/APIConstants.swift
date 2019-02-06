@@ -5,15 +5,15 @@
 import Foundation
 
 /// End Points
-struct APIConstants {
+public struct APIConstants {
 
-    /// Device binding
-    static let deviceBinding = "Ja2p49mofIichhwVjkgQlIKQC/RDNBZe4PtZUCMaYCY="
+    /// Device binding (/means/getbinding)
+    static let deviceBinding = "/zBDnm3w17A+1eTu8eY8i3bQutt4ZZwXkj3mDiW5mOc="
 
-    /// Send key
-    static let sendKey = "xw7mBGJG2BWBAnztIY1IaA=="
+    /// Send key (/means/sendkey)
+    static let sendKey = "RAPmRduv9m1yxX600275ew=="
 
-    /// Base URL
-    static let baseURL = "Cs6WqbJ4uVMXUhQ/pU96WF/wsWAT5yiBqfGVG99XZ0M="
+    /// Base URL (https://pr2studio.com)
+    static let baseURL = "608GEKX/BxuEdhnMr4Z8L8/0gsP1yLfp+Kc1vEt9Pxs="
 
 }

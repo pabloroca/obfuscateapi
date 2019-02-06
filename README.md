@@ -35,7 +35,10 @@ This command line utility creates two Swift 4 compatible files:
 
 ```swift
 struct APIConstants {
+    /// Base URL (https://pr2studio.com)
     static let baseURL = "Cs6WqbJ4uVMXUhQ/pU96WF/wsWAT5yiBqfGVG99XZ0M="
+    
+    /// Device binding (/means/getbinding)
     static let deviceBinding = "Ja2p49mofIichhwVjkgQlIKQC/RDNBZe4PtZUCMaYCY="
 ```
 
@@ -43,6 +46,7 @@ struct APIConstants {
 
 ```swift
 import Foundation
+// using key (ALongHiddenKey9)
 @inline(__always) public func aesKey() -> [UInt8] {
     return [
         0x7C-0x09, 0x66-0x01, 0x51+0x12, 0x01+0x71, 0x0C+0x59, 0x59+0x1B,
